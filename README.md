@@ -2,8 +2,7 @@
 [![celect version](https://img.shields.io/github/package-json/v/balramchauhan1993/celect)](https://github.com/balramchauhan1993/celect)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/balramchauhan1993/celect/blob/master/LICENSE)
 
-*celect* is a jQuery plugin that transforms a select into custom designed select of which value can be set and get easily.
-Any css, style or attr change can be applied to select. Setting and getting value from select is also simple.
+*celect* is a jQuery plugin that transforms a select into custom designed select, of which value can be set and get easily. Any css, style or attr change can be applied to select. Setting and getting value from select is also simple.
 
 
 # Demo
@@ -28,10 +27,10 @@ Include style and script in your page:
 
 ```html
 <select id="drpCars">
-	<option value="0">Select car</option>
-	<option value="1">Audi</option>
-	<option value="2">BMW</option>
-	<option value="3">Citroen</option>
+    <option value="0">Select car</option>
+    <option value="1">Audi</option>
+    <option value="2">BMW</option>
+    <option value="3">Citroen</option>
 </select>
 ```
 ```javascript
@@ -54,7 +53,7 @@ You can change the max-height of the drop-down box by overriding this css rule:
 
 ### `.celectUpdate(value);`
 
-set the passed value for select and update the view.
+Set the passed parameter value for select and update the view.
 
 
 ```javascript
