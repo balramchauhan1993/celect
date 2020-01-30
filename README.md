@@ -1,6 +1,6 @@
 # celect
-[![NPM version](https://github.com/balramchauhan1993/celect)](https://npmjs.org/package/jquery-editable-select)
-[![NPM downloads](https://github.com/balramchauhan1993/celect)](https://npmjs.org/package/jquery-editable-select)
+[![NPM version](https://github.com/balramchauhan1993/celect)](https://github.com/balramchauhan1993/celect)
+[![NPM downloads](https://github.com/balramchauhan1993/celect)](https://github.com/balramchauhan1993/celect)
 [![MIT License](https://github.com/balramchauhan1993/celect/blob/master/LICENSE)](LICENSE)
 
 *celect* is a jQuery plugin that transforms a select into custom designed select of which value can be set and get easily.
@@ -29,10 +29,10 @@ Include style and script in your page:
 
 ```html
 <select id="drpCars">
-	  <option value="0">Select car</option>
-		<option value="1">Audi</option>
-		<option value="2">BMW</option>
-		<option value="3">Citroen</option>
+	<option value="0">Select car</option>
+	<option value="1">Audi</option>
+	<option value="2">BMW</option>
+	<option value="3">Citroen</option>
 </select>
 ```
 ```javascript
