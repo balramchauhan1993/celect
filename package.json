@@ -1,4 +1,12 @@
 {
-  "name": "balramchauhan1993/celect",
-  "version": "1.8.0"
+  "name": "@balramchauhan1993/celect",
+  "description": "Turn a select into custom designed select for easy use and good css.",
+  "version": "1.8.0",
+  "author": "Balram Chauhan",
+  "homepage": "https://balramchauhan1993.github.io/index.html",
+  "license": "MIT",
+  "main": "celect.js",
+  "dependencies": {
+    "jquery": ">= 1.8.x"
+  }
 }
