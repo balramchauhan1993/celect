@@ -1,7 +1,6 @@
 # celect
-[![NPM version](https://github.com/balramchauhan1993/celect)](https://github.com/balramchauhan1993/celect)
-[![NPM downloads](https://github.com/balramchauhan1993/celect)](https://github.com/balramchauhan1993/celect)
-[![MIT License](https://github.com/balramchauhan1993/celect/blob/master/LICENSE)](LICENSE)
+[![celect version](https://img.shields.io/github/package-json/v/balramchauhan1993/celect)](https://github.com/balramchauhan1993/celect)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/balramchauhan1993/celect/blob/master/LICENSE)
 
 *celect* is a jQuery plugin that transforms a select into custom designed select of which value can be set and get easily.
 Any css, style or attr change can be applied to select. Setting and getting value from select is also simple.
@@ -64,4 +63,4 @@ $("#drpcar").celectUpdate(2);
 
 # License
 
-Copyright (c) 2020 Balram Chauhan. Licensed under the MIT license.
+Copyright (c) 2020 balramchauhan1993. Licensed under the MIT license.
