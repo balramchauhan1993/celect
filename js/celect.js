@@ -44,12 +44,10 @@ $(document).ready(function () {
 });
 
 function csd(ctrl){
-	var x, i, j, selElmnt, a, b, c, selOpt, os,p;	
-	os = $(ctrl)[0];
-	selElmnt=$(os).clone()[0];
-	x=$("<div></div>", {class: "celect"});
-	$(x).append(selElmnt);
-	$(os).replaceWith(x);
+	var x, j, selElmnt, a, b, c, selOpt;	
+	selElmnt=$(ctrl)[0];
+	$(selElmnt).wrap("<div class='celect'></div>");
+	x=$(selElmnt).parent();
 	obs.observe($(selElmnt)[0], {attributes: true});	
 	/*for each element, create a new DIV that will act as the selected item:*/
 	selOpt =$(selElmnt).find("option[value="+$(selElmnt).val()+"]");
@@ -153,13 +151,11 @@ var obs = new MutationObserver(function( mutations ) {
 });
 
 function cms(ctrl,op){
-	var x, i, j, selElmnt, a, b, c, os,p,d,t;	
-	os = $(ctrl)[0];
-	selElmnt=$(os).clone()[0];
-	x=$("<div></div>", {class: "celect multi"});
-	$(x).append(selElmnt);
+	var x, j, selElmnt, a, b, c, p,d,t;
+	selElmnt=$(ctrl)[0];
+	$(selElmnt).wrap("<div class='celect'></div>");
+	x=$(selElmnt).parent();
 	$(selElmnt).val(null);
-	$(os).replaceWith(x);
 	obs.observe($(selElmnt)[0], {attributes: true});
 	t=	(!!op.title && op.title.length>0)?op.title:'';
 	/*for each element, create a new DIV that will act as the selected item:*/
@@ -212,14 +208,19 @@ function cms(ctrl,op){
 					var iw=sd.innerWidth();
 					var tw=0;
 					sd.find("span").each(function(){
-						tw=tw+$(this).outerWidth()+3;
+						if(tw+$(this).outerWidth()+3>iw){
+							tw=$(this).outerWidth()+3;
+						}
+						else{
+							tw=tw+$(this).outerWidth()+3;
+						}
 					});
 					var fw=(iw-tw);
-					if(fw<=20){						
-						fw=(Math.ceil(tw/iw)*iw)-tw;
-					}
-					sd.append("<input type='text' style='width:"+fw+"px;max-width: 40px;' />");	
-					sd.find("input").on("keyup", function(){ srh(this);});
+					if(fw<=20){
+						fw=iw;
+					}							
+					sd.append("<input type='text' style='width:"+fw+"px;' />");	
+					sd.find("input").focus().on("keyup", function(){ srh(this);});
 				}
 				$(s).on("click",function(q){	
 					q.stopPropagation();			
@@ -233,6 +234,28 @@ function cms(ctrl,op){
 						else
 							sd.html(t);
 					}
+					else{
+						sd.find("input").remove();
+						if(!!op.searchable && op.searchable){
+							var iw=sd.innerWidth();
+							var tw=0;
+							sd.find("span").each(function(){
+								if(tw+$(this).outerWidth()+3>iw){
+									tw=$(this).outerWidth()+3;
+								}
+								else{
+									tw=tw+$(this).outerWidth()+3;
+								}
+							});
+							var fw=(iw-tw);
+							if(fw<=20){
+								fw=iw;
+							}							
+							sd.append("<input type='text' style='width:"+fw+"px;' />");	
+							sd.find("input").focus().on("keyup", function(){ srh(this);});
+						}
+					}
+					$(sd).closest(".celect").find("select").change();
 				});
 			}
             $(r).find("select").change();
@@ -312,13 +335,18 @@ function srh(ctrl){
 							var iw=sdn.innerWidth();
 							var tw=0;
 							sdn.find("span").each(function(){
-								tw=tw+$(this).outerWidth()+3;
+								if(tw+$(this).outerWidth()+3>iw){
+									tw=$(this).outerWidth()+3;
+								}
+								else{
+									tw=tw+$(this).outerWidth()+3;
+								}
 							});
 							var fw=(iw-tw);
 							if(fw<=20){
-								fw=(Math.ceil(tw/iw)*iw)-tw;
+								fw=iw;
 							}							
-							sdn.append("<input type='text' style='width:"+fw+"px;max-width: 40px;' />");	
+							sdn.append("<input type='text' style='width:"+fw+"px;' />");	
 							sdn.find("input").focus().on("keyup", function(){ srh(this);});
 						}
 						$(s).on("click",function(q){	
@@ -333,6 +361,28 @@ function srh(ctrl){
 								else
 									sdn.html(t);
 							}
+							else{
+								sdn.find("input").remove();
+								if(x){
+									var iw=sdn.innerWidth();
+									var tw=0;
+									sdn.find("span").each(function(){
+										if(tw+$(this).outerWidth()+3>iw){
+											tw=$(this).outerWidth()+3;
+										}
+										else{
+											tw=tw+$(this).outerWidth()+3;
+										}
+									});
+									var fw=(iw-tw);
+									if(fw<=20){
+										fw=iw;
+									}							
+									sdn.append("<input type='text' style='width:"+fw+"px;' />");	
+									sdn.find("input").focus().on("keyup", function(){ srh(this);});
+								}
+							}
+							$(sdn).closest(".celect").find("select").change();
 						});
 					}
 					$(r).find("select").change();

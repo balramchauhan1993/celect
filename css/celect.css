@@ -70,10 +70,10 @@
 
 .select-selected .inner span{
   border: solid 1px dodgerblue;
-  padding: 2px;
+  padding: 1px 2px;
   border-radius: 2px;
   margin-right: 2px;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   display: inline-block !important;
 }
 
