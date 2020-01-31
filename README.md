@@ -7,7 +7,9 @@
 
 # Demo
 
-See demos here: https://balramchauhan1993.github.io/index.html
+See demos here:  
+[Single select](https://balramchauhan1993.github.io/celect-single.html)  
+[Multi select](https://balramchauhan1993.github.io/celect-multi.html)
 
 
 # Installation
@@ -26,7 +28,7 @@ Include style and script in your page:
 ## Basic usage
 
 ```html
-<select id="drpCars">
+<select id="drpcar">
     <option value="0">Select car</option>
     <option value="1">Audi</option>
     <option value="2">BMW</option>
@@ -51,13 +53,37 @@ You can change the max-height of the drop-down box by overriding this css rule:
 
 ## Methods
 
+
+### `.celect();`
+
+While initializing like above optional parameter can be passed for creating multi-select like below:
+
+
+```javascript
+$("#drpcar").celect({multi:true,searchable:true,title:'Select Bikes'});
+```
+
+Search and title will work with multi-select only and for single select no paramter is required while initializing.
+
+
 ### `.celectUpdate(value);`
 
-Set the passed parameter value for select and update the view.
+Set the passed parameter value for select and update the view. this passed value can be passed as an array to update multi-select.
 
 
 ```javascript
 $("#drpcar").celectUpdate(2);
+$("#drpcar").celectUpdate([2,5,9]);
+```
+
+
+### `.celectGet();`
+
+Above function will return the selected value(s) for select. In case of multi-select it will return array of values.
+
+
+```javascript
+$("#drpcar").celectGet();
 ```
 
 # License
