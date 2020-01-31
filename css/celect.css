@@ -67,3 +67,37 @@
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+.select-selected .inner span{
+  border: solid 1px dodgerblue;
+  padding: 2px;
+  border-radius: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  display: inline-block !important;
+}
+
+.select-selected .inner{
+  width: 100%;
+  margin-right: 25px;
+  color: inherit;
+}
+
+.select-selected.multi{
+  padding: 8px 0px;
+  display: flex;
+}
+
+.select-selected input{
+  border: none;  
+  font-size: inherit;
+  color: inherit;
+}
+
+.select-selected input::placeholder{
+  color: inherit;
+}
+
+.select-selected input:focus{
+  outline: none;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>celect | single</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/celect.css" rel="Stylesheet" type="text/css" />
+	<link href="css/celect-demo.css" rel="Stylesheet" type="text/css" />
+	<script type='text/javascript' src='js/jquery-3.3.1.min.js'></script>
+	<script type='text/javascript' src='js/celect.js'></script>
+	<script type='text/javascript' src='js/celect-s-demo.js'></script>
+</head> 
+<body>
+	<header>
+		<nav>
+			<a href="#">Single Select</a>			
+			<a href="celect-multi.html">Multi Select</a>
+		</nav>
+	</header>
+
+<h2 class="text-center">celect - Single Select</h2>
+
+<div class="row">
+	<div class="div">
+	  <select id="drpcar" class="drpmy">
+		<option value="0">Select car</option>
+		<option value="1">Audi</option>
+		<option value="2">BMW</option>
+		<option value="3">Citroen</option>
+		<option value="4">Ford</option>
+		<option value="5">Honda</option>
+		<option value="6">Jaguar</option>
+		<option value="7">Land Rover</option>
+		<option value="8">Mercedes</option>
+		<option value="9">Mini</option>
+		<option value="10">Nissan</option>
+		<option value="11">Toyota</option>
+		<option value="12">Volvo</option>
+	  </select>
+	  
+	  <button onclick="UpdateClass(1);">Toggle Class</button>
+	  <button onclick="UpdateStyle(1);">Toggle Style</button>
+	  <button onclick="UpdateCars(5);">Update</button>
+	  <button onclick="UpdateCars(0);">Reset</button>
+	</div>
+
+	<div class="div">
+	  <select id="drpbike" class="drpmy">
+		<option value="0">Select bike</option>
+		<option value="1">Honda</option>
+		<option value="2">Hero</option>
+		<option value="3">Tvs</option>
+		<option value="4">Bajaj</option>
+		<option value="5">Royal Enfield</option>
+	  </select>
+	  
+	  <button onclick="UpdateClass(2);">Toggle Class</button>
+	  <button onclick="UpdateStyle(2);">Style Class</button>
+	  <button onclick="UpdateBikes(2);">Update</button>
+	  <button onclick="UpdateBikes(0);">Reset</button>
+	</div>
+</div>
+
+<div class="div-desc">
+	<h5>How to initialize?</h5>
+		<hr/>
+	<p>
+		Initialize in document ready function as below<br/><br/>
+		<span>$(document).ready(function(){</span><br/>
+			<span class="ml-30">$("#drpcar").celect();</span><br/>
+			<span class="ml-30">$("#drpbike").celect();</span><br/>
+		<span>});<span><br/>
+		
+		<hr/>
+		
+		If you want to bind click, change or any other function then bind after initialization, like given below:<br/><br/>
+		
+		<span>$(document).ready(function(){<span><br/>
+			<span class="ml-30">$("#drpcar").celect();<span><br/>
+			<span class="ml-30">$("#drpbike").celect();<span><br/>
+			<span class="ml-30">$("#drpcar").on("change",function(){alert('updated');});<span><br/>
+			<span class="ml-30">$("#drpbike").on("change",function(){alert('updated');});<span><br/>
+			<span class="ml-30">$("#drpcar").celectUpdate(5);<span><br/>
+			<span class="ml-30">$("#drpbike").celectUpdate(5);<span><br/>
+		<span>});<span><br/>
+	</p>
+</div>
+
+</body>
+</html>
