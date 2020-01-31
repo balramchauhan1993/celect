@@ -64,7 +64,7 @@
 	<h5>How to initialize?</h5>
 		<hr/>
 	<p>
-		Initialize in document ready function as below<br/><br/>
+		Initialize in document ready function as below:<br/><br/>
 		<span>$(document).ready(function(){</span><br/>
 			<span class="ml-30">$("#drpcar").celect();</span><br/>
 			<span class="ml-30">$("#drpbike").celect();</span><br/>
@@ -72,7 +72,7 @@
 		
 		<hr/>
 		
-		If you want to bind click, change or any other function then bind after initialization, like given below:<br/><br/>
+		If you want to bind click, change or any other event, update value, that can be done as below:<br/><br/>
 		
 		<span>$(document).ready(function(){<span><br/>
 			<span class="ml-30">$("#drpcar").celect();<span><br/>
@@ -82,6 +82,18 @@
 			<span class="ml-30">$("#drpcar").celectUpdate(5);<span><br/>
 			<span class="ml-30">$("#drpbike").celectUpdate(5);<span><br/>
 		<span>});<span><br/>
+		
+		<hr/>
+		
+		To get the selected value:<br/><br/>
+		
+		<span>$("#drpcar").celectGet();<span><br/>
+		<span>$("#drpbike").celectGet();<span><br/>
+		<br/>
+		or (below method is only for single select)
+		<br/><br/>
+		<span>$("#drpcar").val();<span><br/>
+		<span>$("#drpbike").val();<span><br/>
 	</p>
 </div>
 
