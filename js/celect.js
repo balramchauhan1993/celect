@@ -46,7 +46,13 @@ $(document).ready(function () {
 function csd(ctrl){
 	var x, j, selElmnt, a, b, c, selOpt;	
 	selElmnt=$(ctrl)[0];
-	$(selElmnt).wrap("<div class='celect'></div>");
+	if($(selElmnt).parent().hasClass("celect")){
+		$(selElmnt).parent().find(".select-selected").remove();
+		$(selElmnt).parent().find(".select-items").remove();
+	}
+	else{
+		$(selElmnt).wrap("<div class='celect'></div>");
+	}
 	x=$(selElmnt).parent();
 	obs.observe($(selElmnt)[0], {attributes: true});	
 	/*for each element, create a new DIV that will act as the selected item:*/
@@ -152,8 +158,14 @@ var obs = new MutationObserver(function( mutations ) {
 
 function cms(ctrl,op){
 	var x, j, selElmnt, a, b, c, p,d,t;
-	selElmnt=$(ctrl)[0];
-	$(selElmnt).wrap("<div class='celect'></div>");
+	selElmnt=$(ctrl)[0];	
+	if($(selElmnt).parent().hasClass("celect")){
+		$(selElmnt).parent().find(".select-selected").remove();
+		$(selElmnt).parent().find(".select-items").remove();
+	}
+	else{
+		$(selElmnt).wrap("<div class='celect'></div>");
+	}
 	x=$(selElmnt).parent();
 	$(selElmnt).val(null);
 	obs.observe($(selElmnt)[0], {attributes: true});
