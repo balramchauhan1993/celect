@@ -164,7 +164,7 @@ function cms(ctrl,op){
 		$(selElmnt).parent().find(".select-items").remove();
 	}
 	else{
-		$(selElmnt).wrap("<div class='celect'></div>");
+		$(selElmnt).wrap("<div class='celect multi'></div>");
 	}
 	x=$(selElmnt).parent();
 	$(selElmnt).val(null);
